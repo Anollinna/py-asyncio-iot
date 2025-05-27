@@ -15,14 +15,14 @@ def generate_id(length: int = 8) -> str:
 # if it walks like a duck, and quacks like a duck, it's a duck
 # )
 class Device(Protocol):
-    def connect(self) -> None:
+    async def connect(self) -> None:
         ...  # Ellipsis - similar to "pass",
         # but sometimes has different meaning
 
-    def disconnect(self) -> None:
+    async def disconnect(self) -> None:
         ...
 
-    def send_message(self, message_type: MessageType, data: str) -> None:
+    async def send_message(self, message_type: MessageType, data: str) -> None:
         ...
 
 
